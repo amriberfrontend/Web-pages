@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html charset="UTF-8" lang="es">
+    <head>
+        <title>Ejercicio Ciudades</title>
+    </head>
+    <body>
+        <input type="text" id="input-ciudad" placeholder="Introduce el nombre de una ciudad">
+        <button id="agregar-btn" onclick="agregarCiudad()">Agregar Ciudad</button>
+        <ol id="lista-ciudades"></ol>
+        
+        <script type="text/javascript">
+            // Recoger los elementos del DOM
+            const inputCiudad = document.getElementById("input-ciudad");
+            const agregarBtn = document.getElementById("agregar-btn");
+            const listaCiudades = document.getElementById("lista-ciudades");
+            inputCiudad.addEventListener("keyup", function(event) {
+                event.preventDefault();
+                if (event.keyCode === 13) {
+                    agregarBtn.click();
+                }
+            });
+            
+            // Agrega la ciudad a la lista
+            function agregarCiudad() {
+
+                // Crear un nuevo elemento de lista
+                const nuevaCiudad = document.createElement("li");
+                nuevaCiudad.textContent = inputCiudad.value;
+                
+                // Agregar la nueva ciudad a la lista si no está vacía
+                if (inputCiudad.value.trim() != "") {
+                    listaCiudades.appendChild(nuevaCiudad);
+                }
+
+
+                // Limpiar el campo de entrada
+                inputCiudad.value = "";
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html charset="UTF-8" lang="es">
+    <head>
+        <title>Ejercicio Ciudades</title>
+    </head>
+    <body>
+        <input type="text" id="input-nombre" placeholder="Introduce un nombre">
+        <input type="text" id="input-apellido" placeholder="Introduce un apellido">
+        <button id="concatenar">Concatenar</button>
+        <br>
+        <br>
+        <input type="text" id="input-nombre-completo" placeholder="Introduce el nombre completo">
+        <button id="agregar-btn">Añadir nombre</button>
+        <ol id="lista-nombres"></ol>
+        
+        <script type="text/javascript">
+            // Recoger los elementos del DOM
+            const inputNombre = document.getElementById("input-nombre");
+            const inputApellido = document.getElementById("input-apellido");
+            const inputNombreCompleto = document.getElementById("input-nombre-completo");
+            const concatenarBtn = document.getElementById("concatenar");
+            const agregarBtn = document.getElementById("agregar-btn");
+            const listaNombres = document.getElementById("lista-nombres");
+
+            // Inicializar variables
+            const nombreConcatenado = "";
+            let nombreCompletoConLongitud = "";
+
+            // Concatenar nombre y apellido y agregarlo al campo de nombre completo
+            concatenarBtn.addEventListener("click", function() {
+                const nombreCompleto = inputNombre.value + " " + inputApellido.value;
+                inputNombreCompleto.value = nombreCompleto;
+            });
+
+            // Agregar el nombre completo con su longitud a la lista
+            agregarBtn.addEventListener("click", function() {
+                // Obtener la longitud del nombre completo
+                const longitudNombre = inputNombreCompleto.value.length;
+                nombreCompletoConLongitud = inputNombreCompleto.value + " (" + longitudNombre + ")";
+
+                // Crear un nuevo elemento de lista y agregarlo a la lista de nombres
+                const nuevoNombre = document.createElement("li");
+                nuevoNombre.textContent = nombreCompletoConLongitud;
+                listaNombres.appendChild(nuevoNombre);
+            });
+        </script>
+    </body>
+</html>
