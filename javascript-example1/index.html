@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html charset="UTF-8" lang="es">
+    <head>
+        <title>JavaScript Example 1</title>
+    </head>
+    <body>
+        <input type="text" id="input-nombre" placeholder="Introduce tu nombre">
+        <button id="mostrar-btn" onclick="mostrarNombre()">Calcular</button>
+        <div id="resultado"></div>
+        <div id="suma-pares"></div>
+        <div id="media-pares"></div>
+        <div id="suma-parametros"></div>
+        <script type="text/javascript">
+            // Recoger los elementos del DOM
+            const inputNombre = document.getElementById("input-nombre");
+            const mostrarBtn = document.getElementById("mostrar-btn");
+            const resultadoDiv = document.getElementById("resultado");
+            const sumaParesDiv = document.getElementById("suma-pares");
+            const mediaParesDiv = document.getElementById("media-pares");
+            const sumaParametrosDiv = document.getElementById("suma-parametros");
+
+            function mostrarNombre() {
+                const nombre = document.createElement("p");
+                nombre.textContent = "El nombre es: " + inputNombre.value;
+                resultadoDiv.innerHTML = "";
+                resultadoDiv.append(nombre);
+            }
+
+            // Inicializar variables
+            let sumaPares = 0;
+            let mediaPares = 0;
+
+            // Bucle para sumar números pares del 1 al 1000
+            for (let i = 1; i <= 1000; i++) {
+                if (i % 2 == 0) {
+                    sumaPares += i;
+
+                    // Cuando llegue al número 204 (el 102º par), calcula la media
+                    if (i == 204) {
+                        mediaPares = sumaPares / 102;
+                    }
+                }
+            }
+
+            // Mostrar resultados en el DOM
+            sumaParesDiv.append("La suma de los números pares del 1 al 1000 es: " + sumaPares);
+            mediaParesDiv.append("La media de los primeros 102 números pares es: " + mediaPares);
+            sumaParametrosDiv.append("La suma de los parámetros 1, 2, 3, 4, 5 es: " + suma(1, 2, 3, 4, 5));
+
+            /**
+             * Función que suma todos los parámetros que se le pasan
+             * @returns {number} Suma de los parámetros
+             */
+            function suma() {
+                const numberArguments = arguments.length; // Número de parámetros
+                let sumArguments = 0;
+
+                // Bucle para sumar todos los parámetros
+                for (let i = 0; i < numberArguments; i++) {
+                    sumArguments += arguments[i];
+                }
+
+                return sumArguments; // Devuelve la suma de los parámetros
+            }
+        </script>
+    </body>
+</html>
