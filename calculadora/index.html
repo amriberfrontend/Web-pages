@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html charset="UTF-8" lang="es">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Calculadora</title>
+    </head>
+    <body>
+        <main>
+            <div id="display">
+                <input type="text" id="result" placeholder="0" readonly>
+            </div>
+            <div id="keypad">
+                <div id="numbers"></div>
+                <aside>
+                    <div id="operators">
+                        <button class="operator" id="add">+</button>
+                        <button class="operator" id="subtract">-</button>
+                        <button class="operator" id="multiply">x</button>
+                        <button class="operator" id="divide">/</button>
+                    </div>
+                    <div id="controls">
+                        <button id="clear">C</button>
+                        <button id="equals">=</button>
+                    </div>
+                </aside>
+
+            </div>
+        </main>
+        <script>
+            const display = document.getElementById('result');
+            const numbersContainer = document.getElementById('numbers');
+            const operators = document.querySelectorAll('.operator');
+            const clearButton = document.getElementById('clear');
+            const equalsButton = document.getElementById('equals');
+
+            let storedValue = 0;
+            let displayedValue = 0;
+            let result = 0;
+            let operation = "";
+
+            for (let i = 9; i >= 0; i--) {
+                const numberButton = document.createElement('button');
+                numberButton.classList.add('number');
+                numberButton.textContent = i;
+                numberButton.addEventListener('click', () => {
+                    display.value += i
+                    displayedValue = parseFloat(display.value);
+                });
+                numbersContainer.appendChild(numberButton);
+            }
+
+            // Creates the listener event for each operator button
+            operators.forEach(operator => {
+                operator.addEventListener('click', () => {
+                    operation = operator.id; // sets the current operation
+                    console.log("Current operation: " + operation);
+                })
+            });
+
+            // Clears the values, the operation and the display
+            clearButton.addEventListener('click', () => {
+                storedValue = 0;
+                displayedValue = 0;
+                result = 0;
+                operation = "";
+                display.value = "";
+                
+            });
+            equalsButton.addEventListener('click', () => {
+                calculate();
+            });
+
+            // Calculates the result based on the selected operation and display it
+            function calculate() {
+                switch (operation) {
+                    case "add":
+                        result = storedValue + displayedValue;
+                        break;
+                    case "subtract":
+                        result = storedValue - displayedValue;
+                        break;
+                    case "multiply":
+                        result = storedValue * displayedValue;
+                        break;
+                    case "divide":
+                        result = storedValue / displayedValue;
+                        break;
+                    default:
+                        result = displayedValue;
+                        break;
+                }
+                display.value = result;
+            }
+        </script>
+    </body>
+</html>

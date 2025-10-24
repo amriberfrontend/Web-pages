@@ -1,0 +1,17 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+
+header {
+  background-color: #11111b;
+}
+
+footer {
+  background-color: #11111b;
+}/*# sourceMappingURL=styles-template-mocha.css.map */

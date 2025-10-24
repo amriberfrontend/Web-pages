@@ -1,0 +1,41 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: #303446;
+  color: #c6d0f5;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  background-color: #414559;
+  min-width: 40rem;
+  min-height: 60rem;
+  flex-direction: column;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.12);
+  border-radius: 0.8rem;
+}
+
+#display {
+  padding: 0.8rem;
+  min-height: 7rem;
+  display: flex;
+}
+
+#result {
+  border-radius: 0.8rem;
+  width: 100%;
+  flex-grow: 1;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #232634;
+}
+
+footer {
+  background-color: #232634;
+}/*# sourceMappingURL=styles.css.map */
