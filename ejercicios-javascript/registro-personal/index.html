@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html charset="UTF-8" lang="es">
+    <head>
+        <title>Ejercicio Exponente</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div id="content">
+            <form id="registro" action="https://marvel.com" method="post">
+                <fieldset>
+                    <legend>Datos Personales</legend>
+                    <label for="nombre-completo">Nombre completo:</label>
+                    <input type="text" name="nombre-completo" id="nombre-completo" minlength="2" maxlength="40" required><br>
+                    <label for="dni">DNI:</label>
+                    <input type="text" name="dni" id="dni" pattern="[0-9]{8}[A-Za-z]{1}"><br>
+                    <label for="estado-civil">Estado civil:</label>
+                    <select name="estado-civil" id="estado-civil">
+                        <option value="soltero">Soltero</option>
+                        <option value="casado">Casado</option>
+                        <option value="viudo">Viudo</option>
+                        <option value="divorciado">Divorciado</option>
+                        <option value="otro">Otro</option>
+                    </select><br>
+                    <button type="submit">Registrar</button>
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>

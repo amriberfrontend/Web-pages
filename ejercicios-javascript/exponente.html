@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html charset="UTF-8" lang="es">
+    <head>
+        <title>Ejercicio Exponente</title>
+    </head>
+    <body>
+        <input type="number" id="input-base" placeholder="Introduce la base">
+        <input type="number" id="input-exponente" placeholder="Introduce el exponente">
+        <button id="calcular-btn" onclick="calcularPotencia()">Calcula</button><br>
+
+        <input type="number" id="resultado" placeholder="Resultado" readonly>
+        <button id="square-btn" onclick="squareResult()">Elevar al cuadrado</button><br>
+
+        <input type="number" id="square-result" placeholder="Resultado al cuadrado" readonly>
+
+        <script type="text/javascript">
+            // Recoger los elementos del DOM
+            const inputBase = document.getElementById("input-base");
+            const inputExponente = document.getElementById("input-exponente");
+            const resultadoInput = document.getElementById("resultado");
+            const squareResultInput = document.getElementById("square-result");
+
+            // Calcular la potencia y mostrar el resultado
+            function calcularPotencia() {
+                const base = parseFloat(inputBase.value);
+                const exponente = parseFloat(inputExponente.value);
+                const resultado = Math.pow(base, exponente);
+                resultadoInput.value = resultado;
+            }
+            
+            // Multiplicar el número por si mismo
+            function squareResult() {
+                const resultado = squareResultInput.value;
+                console.log(resultado);
+                const square = Math.pow(resultado, 2);
+                console.log(square);
+                squareResultInput.value = square;
+            }
+        </script>
+    </body>

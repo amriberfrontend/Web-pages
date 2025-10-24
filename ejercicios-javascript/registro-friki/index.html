@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html charset="UTF-8" lang="es">
+    <head>
+        <title>Ejercicio Exponente</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div id="content">
+            <fieldset id="datos-personales">
+                <legend>Datos Personales</legend>
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" placeholder="Nombre completo" required><br>
+                <label for="edad">Edad:</label>
+                <input type="number" min="12" max="120" id="edad" placeholder="Edad" required><br>
+                <label for="phone-number">Teléfono:</label>
+                <input type="number" id="phone-number" placeholder="Teléfono"><br>
+                <label for="direccion">Dirección:</label>
+                <textarea id="direccion" cols="50" rows="4" maxlength="200"></textarea>
+                <br>
+            </fieldset>
+            <fieldset id="datos-frikis">
+                <legend>Datos Frikis</legend>
+                <label for="idiomas">Idioma de tebeos:</label>
+                <select name="idiomas" id="idiomas">
+                    <option value="ingles">Inglés</option>
+                    <option value="frances">Francés</option>
+                    <option value="espanyol">Español</option>
+                </select>
+                <br>
+                <label for="personaje-preferido">Personaje Preferido:</label>
+                <select name="personaje-preferido" id="personaje-preferido">
+                    <optgroup label="Los Vengadores">
+                        <option value="thor">Thor</option>
+                        <option value="capitan-america">Capitán América</option>
+                        <option value="hulk">Hulk</option>
+                        <option value="hawkeye">Ojo de Halcón</option>
+                    </optgroup>
+                    <optgroup label="Los Cuatro Fantásticos">
+                        <option value="la-cosa">La Cosa</option>
+                        <option value="mujer-invisible">Mujer Invisible</option>
+                        <option value="mr-fantastico">Mr. Fantástico</option>
+                        <option value="antorcha-humana">Antorcha Humana</option>
+                    </optgroup>
+                </select>
+                <br>
+                <label for="color-favorito">Color Favorito:</label>
+                <input type="color" name="color-favorito" id="color-favorito">
+            </fieldset>
+        </div>
+        <script>
+            // const colorFavoritoInput = document.getElementById('color-favorito');
+            // colorFavoritoInput.addEventListener('input', (event) => {
+            //     document.body.style.backgroundColor = event.target.value;
+            // });
+        </script>
+    </body>
+</html>
