@@ -6,22 +6,24 @@ body {
   font-size: 1.6rem;
   background-color: #303446;
   color: #c6d0f5;
-  display: flex;
-  justify-content: center;
 }
 
 main {
+  min-width: 20rem;
+  max-width: 30rem;
+  margin: auto;
+  padding: 0.8rem;
   background-color: #414559;
-  min-width: 40rem;
-  min-height: 60rem;
+  display: flex;
   flex-direction: column;
-  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.12);
   border-radius: 0.8rem;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.12);
 }
 
 #display {
-  padding: 0.8rem;
   min-height: 7rem;
+  padding-bottom: 0.8rem;
   display: flex;
 }
 
@@ -30,6 +32,62 @@ main {
   width: 100%;
   flex-grow: 1;
   box-sizing: border-box;
+  background-color: #232634;
+  border: 0.2rem solid #6c7086;
+  color: #c6d0f5;
+  font-size: 2.4rem;
+  padding: 0 0.8rem;
+}
+
+#keypad {
+  display: flex;
+  justify-content: space-around;
+  gap: 1.2rem;
+}
+#keypad aside {
+  display: flex;
+  flex-direction: column;
+}
+
+#controls, #operators {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  row-gap: 0.4rem;
+}
+
+#operators {
+  margin-bottom: 0.8rem;
+}
+
+#controls button {
+  background-color: #e5c890;
+  color: #4c4f69;
+  font-weight: 600;
+}
+#controls button:active {
+  background-color: #f0e0c0;
+}
+
+#numbers {
+  max-width: 60%;
+  display: flex;
+  flex-flow: row-reverse wrap;
+  justify-content: space-around;
+  align-content: space-around;
+  row-gap: 0.4rem;
+}
+
+button {
+  width: 4.8rem;
+  height: 4.8rem;
+  background-color: #292c3c;
+  color: #c6d0f5;
+  border: none;
+  border-radius: 0.8rem;
+}
+button:active {
+  background-color: #6c7086;
 }
 
 header {

@@ -4,7 +4,11 @@ $crust:#232634
 $text:#c6d0f5
 $text-dark:#4c4f69
 $surface0:#414559
+$surface1:#45475a
+$overlay0:#6c7086
 $yellow:#e5c890
+$yellow-active:#f0e0c0
+
 
 
 html
@@ -12,33 +16,91 @@ html
 
 body
     font-size: 1.6rem
-    background-color: $base-color
-    color: $text-color
-    display: flex
-    justify-content: center
+    background-color: $base
+    color: $text
 
 main
-    background-color: $surface0-color
-    min-width: 40rem
-    min-height: 60rem
+    min-width: 20rem
+    max-width: 30rem
+    margin: auto
+    padding: 0.8rem
+    background-color: $surface0
+    display: flex
     flex-direction: column
-    -webkit-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.12); 
-    box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.12);
     border-radius: 0.8rem
+    box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.12);
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.12); 
 
 #display
-    padding: 0.8rem
     min-height: 7rem
+    padding-bottom: 0.8rem
     display: flex
+
+    
 
 #result
     border-radius: 0.8rem
     width: 100%
     flex-grow: 1
     box-sizing: border-box
+    background-color: $crust
+    border: 0.2rem solid $overlay0
+    color: $text
+    font-size: 2.4rem
+    padding: 0 0.8rem
+
+#keypad
+    display: flex
+    justify-content: space-around
+    gap: 1.2rem
+    aside
+        display: flex
+        flex-direction: column
+
+%side-panel
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+    row-gap: 0.4rem
+
+#operators
+    @extend %side-panel
+    margin-bottom: 0.8rem
+
+#controls
+    @extend %side-panel
+
+    button
+        background-color: $yellow
+        color: $text-dark
+        font-weight: 600
+
+        &:active
+            background-color: $yellow-active
+            
+
+
+#numbers
+    max-width: 60%
+    display: flex
+    flex-flow: row-reverse wrap
+    justify-content: space-around
+    align-content: space-around
+    row-gap: 0.4rem
+
+button
+    width: 4.8rem
+    height: 4.8rem
+    background-color: $mantle
+    color: $text
+    border: none
+    border-radius: 0.8rem
+
+    &:active
+        background-color: $overlay0
 
 header
-    background-color: $crust-color
+    background-color: $crust
 
 footer
-    background-color: $crust-color
+    background-color: $crust

@@ -54,6 +54,9 @@
             operators.forEach(operator => {
                 operator.addEventListener('click', () => {
                     operation = operator.id; // sets the current operation
+                    storedValue = displayedValue
+                    displayedValue = 0
+                    display.value = ""
                     console.log("Current operation: " + operation);
                 })
             });
@@ -90,6 +93,7 @@
                         result = displayedValue;
                         break;
                 }
+                storedValue = result
                 display.value = result;
             }
         </script>
