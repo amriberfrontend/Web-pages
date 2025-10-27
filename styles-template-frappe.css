@@ -4,14 +4,14 @@ html {
 
 body {
   font-size: 1.6rem;
-  background-color: #303446;
+  background: #303446;
   color: #c6d0f5;
 }
 
 header {
-  background-color: #232634;
+  background: #232634;
 }
 
 footer {
-  background-color: #232634;
+  background: #232634;
 }/*# sourceMappingURL=styles-template-frappe.css.map */

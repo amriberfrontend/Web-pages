@@ -7,30 +7,31 @@
     </head>
     <body>
         <main>
-            <div id="display">
-                <input type="text" id="result" placeholder="0" readonly>
+            <div class="display">
+                <input type="text" id="result" class="display__input" placeholder="0" readonly>
             </div>
-            <div id="keypad">
-                <div id="numbers"></div>
+            <div class="keypad">
+                <!-- * The numbers are generated dynamically, they have the class [number] -->
+                <div class="keypad__numbers" id="numbers"></div>
                 <aside>
-                    <div id="operators">
-                        <button class="operator" id="add">+</button>
-                        <button class="operator" id="subtract">-</button>
-                        <button class="operator" id="multiply">x</button>
-                        <button class="operator" id="divide">/</button>
+                    <div class="keypad__operators">
+                        <button class="operator keypad__button" id="add">+</button>
+                        <button class="operator keypad__button" id="subtract">-</button>
+                        <button class="operator keypad__button" id="multiply">x</button>
+                        <button class="operator keypad__button" id="divide">/</button>
                     </div>
-                    <div id="controls">
-                        <button id="clear">C</button>
-                        <button id="equals">=</button>
+                    <div class="keypad__controls">
+                        <button class="keypad__button" id="clear">C</button>
+                        <button class="keypad__button keypad__button--filled" id="equals">=</button>
                     </div>
                 </aside>
+                
 
             </div>
         </main>
         <script>
             const display = document.getElementById('result');
             const numbersContainer = document.getElementById('numbers');
-            const operators = document.querySelectorAll('.operator');
             const clearButton = document.getElementById('clear');
             const equalsButton = document.getElementById('equals');
 
@@ -39,9 +40,10 @@
             let result = 0;
             let operation = "";
 
+            // Generate the number buttons
             for (let i = 9; i >= 0; i--) {
                 const numberButton = document.createElement('button');
-                numberButton.classList.add('number');
+                numberButton.classList.add('keypad__button', 'number');
                 numberButton.textContent = i;
                 numberButton.addEventListener('click', () => {
                     display.value += i
@@ -50,18 +52,18 @@
                 numbersContainer.appendChild(numberButton);
             }
 
-            // Creates the listener event for each operator button
-            operators.forEach(operator => {
+            // Create the listener event for each operator button
+            document.querySelectorAll('.operator').forEach(operator => {
                 operator.addEventListener('click', () => {
-                    operation = operator.id; // sets the current operation
+                    operation = operator.id; // set the current operation
+                    // Store the displayed value and clear the display
                     storedValue = displayedValue
                     displayedValue = 0
                     display.value = ""
-                    console.log("Current operation: " + operation);
                 })
             });
 
-            // Clears the values, the operation and the display
+            // Clear the values, the operation and the display
             clearButton.addEventListener('click', () => {
                 storedValue = 0;
                 displayedValue = 0;
@@ -74,7 +76,7 @@
                 calculate();
             });
 
-            // Calculates the result based on the selected operation and display it
+            // Calculate the result based on the selected operation and display it
             function calculate() {
                 switch (operation) {
                     case "add":
@@ -96,6 +98,7 @@
                 storedValue = result
                 display.value = result;
             }
+
         </script>
     </body>
 </html>
