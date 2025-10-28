@@ -1,6 +1,6 @@
 html {
   font-size: 10px;
-  font-family: "Times New Roman", Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 body {
@@ -37,24 +37,19 @@ main {
   overflow: scroll;
 }
 
-.leftSpacer {
-  grid-area: leftSpacer;
-}
-
 .content {
   gap: 1rem;
   -moz-column-count: 3;
        column-count: 3;
   margin: 0.8rem 1.6rem;
-  grid-area: center;
 }
 .content p {
-  min-width: 50ch;
+  margin: auto;
+  margin-top: 1rem;
   max-width: 75ch;
 }
-
-.rightSpacer {
-  grid-area: rightSpacer;
+.content p::first-letter {
+  font-size: 2em;
 }
 
 footer {
@@ -68,4 +63,23 @@ footer {
 }
 footer img {
   max-height: inherit;
+}
+
+@media only screen and (max-width: 600px) {
+  .content {
+    -moz-column-count: 1;
+         column-count: 1;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .content {
+    -moz-column-count: 2;
+         column-count: 2;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .content {
+    -moz-column-count: 3;
+         column-count: 3;
+  }
 }/*# sourceMappingURL=styles.css.map */

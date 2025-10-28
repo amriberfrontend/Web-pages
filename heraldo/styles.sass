@@ -6,16 +6,13 @@ $header:#f0f0f0
 $background:#F8F8F8
 $footer:#ffffff
 
-@media screen (max-device-width: 768px)
-    .content
-        column-count: 1
+
     
-}
 
 
 html
     font-size: 10px
-    font-family: 'Times New Roman', Times, serif
+    font-family: Georgia, 'Times New Roman', Times, serif
 
 body
     margin: 0
@@ -46,21 +43,19 @@ main
     flex-grow: 1
     overflow: scroll
             
-.leftSpacer
-    grid-area: leftSpacer
 
 .content
     gap: 1rem
     column-count: 3
     margin: 0.8rem 1.6rem
-    grid-area: center
 
     p
-        min-width: 50ch
+        margin: auto
+        margin-top: 1rem
         max-width: 75ch
+        &::first-letter
+            font-size: 2em
 
-.rightSpacer
-    grid-area: rightSpacer
 
 
 footer
@@ -74,3 +69,15 @@ footer
 
     img
         max-height: inherit
+
+@media only screen and (max-width: 600px)
+    .content
+        column-count: 1
+
+@media only screen and (min-width: 600px)
+    .content
+        column-count: 2
+
+@media only screen and (min-width: 992px) 
+    .content
+        column-count: 3

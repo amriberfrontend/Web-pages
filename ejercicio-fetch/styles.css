@@ -1,0 +1,30 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  background: #1e1e2e;
+  color: #cdd6f4;
+}
+
+header {
+  background: #11111b;
+}
+
+main {
+  display: flex;
+  margin: auto;
+}
+
+footer {
+  background: #11111b;
+}
+
+.content {
+  background: #181825;
+}
+.content__input {
+  background: #313244;
+  color: #cdd6f4;
+}/*# sourceMappingURL=styles.css.map */
