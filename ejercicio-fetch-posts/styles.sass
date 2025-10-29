@@ -1,0 +1,39 @@
+$base:#1e1e2e
+$mantle:#181825
+$crust:#11111b
+$text:#cdd6f4
+$mauve:#cba6f7
+$surface0:#313244
+
+html
+    font-size: 10px
+
+body
+    font-size: 1.6rem
+    background: $base
+    color: $text
+
+header
+    background: $crust
+
+main
+    display: flex
+    flex-direction: column
+    align-items: center
+    background: $mantle
+    margin: auto
+    padding: 0.8rem
+
+
+footer
+    background: $crust
+
+.content
+    &__input
+        background: $surface0
+        color: $text
+
+    &__name
+        text-align: center
+    &__address
+        text-align: center
