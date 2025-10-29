@@ -1,0 +1,43 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+@keyframes bounce {
+  from {
+    top: 0.8rem;
+  }
+  to {
+    top: 15rem;
+  }
+}
+@keyframes slideRight {
+  from {
+    left: 0;
+  }
+  to {
+    left: calc(100% - 10rem);
+  }
+}
+.track {
+  position: relative;
+  width: 100%;
+}
+.track__bouncer {
+  background: red;
+  height: 10rem;
+  width: 10rem;
+  animation: bounce 0.75s ease-in infinite alternate, slideRight 5s linear forwards;
+  position: absolute;
+}
+
+.slider {
+  background: red;
+  height: 10rem;
+  width: 10rem;
+  animation-name: slideRight;
+  animation-duration: 5s;
+}/*# sourceMappingURL=styles.css.map */
