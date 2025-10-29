@@ -14,17 +14,24 @@ header {
 
 main {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #181825;
   margin: auto;
+  padding: 0.8rem;
 }
 
 footer {
   background: #11111b;
 }
 
-.content {
-  background: #181825;
-}
 .content__input {
   background: #313244;
   color: #cdd6f4;
+}
+.content__name {
+  text-align: center;
+}
+.content__address {
+  text-align: center;
 }/*# sourceMappingURL=styles.css.map */

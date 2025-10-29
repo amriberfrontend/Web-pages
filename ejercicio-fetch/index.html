@@ -3,53 +3,16 @@
     <head>
         <title>Usuarios</title>
         <link rel="stylesheet" href="styles.css" />
+        <script src="script.js" async ></script>
     </head>
     <body>
-        <!-- TODO: User output-->
         <main>
             <div id="user-search" class="content">
                 <input type="text" id="user-id" class="content__input" placeholder="Introduce usuario">
-                <button id="submit-user-id" class="content__button">Buscar</button>
+                <button id="submit-user-id" class="content__button">OK</button>
             </div>
             <div id="user-info" class="content"></div>
+            <div id="user-posts" class="content"></div>
         </main>
     </body>
-    <script>
-        /**
-         * TODO: Fetch user based on input
-         * TODO: Display user name
-         * TODO: Add user posts to list
-         */
-        const userInfo = document.getElementById("user-info")
-        const userId = document.getElementById("user-id")
-        const submitUserId = document.getElementById("submit-user-id")
-
-        
-        function createNameField(name) {
-            const userName = document.createElement("h1")
-            userName.classList.add("content__name")
-            userName.textContent = name
-            return userName
-        }
-        function createAddressField(address) {
-            const userAddress = document.createElement("h2")
-            userAddress.classList.add("content__address")
-            userAddress.textContent = `${address.street}, ${address.suite}, ${address.zipcode}, ${address.city}`
-            return userAddress
-        }
-        
-        async function getUserById() {
-            let data = ""
-            const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId.value}`)
-            return await response.json()
-        }
-
-        submitUserId.addEventListener("click", async () => {
-            const user = await getUserById()
-            const address = user.address
-            console.log(user)
-            userInfo.append(createNameField(user.name))
-            userInfo.append(createAddressField(user.address))
-        })
-        </script>
 </html>
