@@ -42,4 +42,14 @@ main {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+
+.registro-operario {
+  padding: 10px;
+}
+.registro-operario__input {
+  margin-top: 10px;
+}
+.registro-operario__button {
+  margin: 8px;
 }/*# sourceMappingURL=styles.css.map */

@@ -11,16 +11,29 @@
         <iframe src="../cabecera.html" class="container-fluid"></iframe>
         <main>
             <div id="image-gallery" class="image-gallery"></div>
-            <div class="container">
+            <div class="container registro-operario">
 
-                <form method="POST">
-                    <input type="text" class="form-control" id="full-name" placeholder="Nombre completo">
-                    <input type="number" class="form-control" id="age" placeholder="Edad">
-                    <input type="text" class="form-control" id="zip-code" placeholder="Código postal">
-                    <textarea class="form-control" id="address" placeholder="Dirección"></textarea>
-                    <input type="tel" class="form-control" id="phone-number" placeholder="Teléfono">
-                    <input type="email" class="form-control" id="email-address" placeholder="Correo electrónico">
-    
+                <form class="needs-validation">
+                    <small class="text-body-secondary">* Campos requeridos</small>
+                    <div>
+                        <input type="text" class="form-control registro-operario__input" id="full-name" placeholder="Nombre completo*" minlength="10" maxlength="20" required>
+                        <div class="invalid-feedback">
+                            El nombre debe tener entre 10 y 20 caracteres.
+                        </div>
+
+                    </div>
+                    <div>
+                        <input type="number" class="form-control registro-operario__input" id="age" placeholder="Edad*" min="18" max="99" required>
+                        <div class="invalid-feedback">
+                            La edad debe ser mayor de 18 y menor de 99
+                        </div>
+
+                    </div>
+                    <input type="text" class="form-control registro-operario__input" id="zip-code" placeholder="Código postal">
+                    <textarea class="form-control registro-operario__input" id="address" placeholder="Dirección" maxlength="100" rows="3"></textarea>
+                    <input type="tel" class="form-control registro-operario__input" id="phone-number" placeholder="Teléfono">
+                    <input type="email" class="form-control registro-operario__input" id="email-address" placeholder="Correo electrónico">
+                    <button type="submit" class="btn btn-primary registro-operario__button" id="submit">Registrar</button>
                 </form>
             </div>
         </main>
