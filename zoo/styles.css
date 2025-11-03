@@ -78,8 +78,42 @@ main {
 .ecosystem-card__content p::first-letter {
   font-size: 2em;
   font-family: Garamond, "Times New Roman", Times, serif;
+  text-shadow: 1px 1px 2px #0ff;
 }
 
 .carousel-button {
   background: black;
+}
+
+.carousel {
+  text-shadow: 0px 0px 6px #000000;
+}
+.carousel h6 {
+  font-style: italic;
+}
+
+@keyframes bounce {
+  from {
+    top: 0.8rem;
+  }
+  to {
+    top: 15rem;
+  }
+}
+@keyframes slideRight {
+  from {
+    left: 0;
+  }
+  to {
+    left: calc(100% - 10rem);
+  }
+}
+.track {
+  position: relative;
+  width: 100%;
+}
+.track__bouncer {
+  height: 10rem;
+  animation: bounce 0.75s ease-in infinite alternate, slideRight 5s linear forwards;
+  position: absolute;
 }/*# sourceMappingURL=styles.css.map */
